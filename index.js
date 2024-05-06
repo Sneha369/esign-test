@@ -1,12 +1,16 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req,res)=>{
     res.send('Signer Gateway test app is running')
 })
 
 app.post('/esign/success', (req,res)=>{
-    console.log(req)
+    console.log(req.body)
+    console.log('*'.repeat(10))
+    console.log(req.headers)
     res.send('Signer Gateway response received')
 })
 
