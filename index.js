@@ -11,7 +11,7 @@ app.post('/esign/success', (req,res)=>{
     console.log(req.body)
     console.log('*'.repeat(10))
     console.log(req.headers)
-    res.send('Signer Gateway response received')
+    res.redirect("https://holderui.dev.cip.corporateidplatform.com/")
 })
 
 app.post('/esign/error', (req,res)=>{
